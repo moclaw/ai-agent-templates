@@ -11,6 +11,37 @@ This guide helps you set up a new project using the Claude AI development templa
 
 ## Quick Setup
 
+### Option 1: Interactive Setup (Recommended)
+
+Run the interactive setup script to automatically configure your project:
+
+**Linux/macOS:**
+```bash
+./scripts/setup.sh
+```
+
+**Windows (PowerShell):**
+```powershell
+.\scripts\setup.ps1
+```
+
+The setup wizard will:
+- Detect or prompt for your preferred programming language
+- Ask for project name and description
+- Allow you to specify a target directory (can be a new directory path)
+- Configure language-specific files and dependencies
+- Set up MCP integration (JIRA, Confluence)
+- Configure GitHub Copilot integration
+- Create example projects
+- Initialize git repository and install dependencies (optional)
+
+**Target Directory Examples:**
+- `.` - Set up in current directory
+- `my-new-project` - Create and set up in a new subdirectory
+- `/path/to/nested/project` - Create nested directories and set up there
+
+### Option 2: Manual Setup
+
 1. **Clone or Use This Template**
    ```bash
    git clone <your-repo-url>

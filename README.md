@@ -25,10 +25,13 @@ Run the interactive setup script to configure your project:
 The setup wizard will:
 - Detect or ask for your preferred programming language
 - Configure language-specific settings
+- Allow you to specify a target directory for the project (defaults to current directory)
 - Set up MCP integration (JIRA, Confluence)
 - Configure GitHub Copilot integration
 - Create example projects
 - Install dependencies
+
+**Note:** You can specify any directory path (including non-existent nested paths) as the target directory. The setup script will create the directory structure and set up the project there.
 
 ### Manual Setup
 
