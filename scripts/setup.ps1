@@ -126,6 +126,7 @@ Write-Host "→ Step 2: Project Configuration" -ForegroundColor Green
 Write-Host ""
 $PROJECT_NAME = Get-InputWithDefault "  Project name" "my-ai-project"
 $PROJECT_DESC = Get-InputWithDefault "  Project description" "AI-powered application"
+$TARGET_DIR = Get-InputWithDefault "  Target directory" "."
 Write-Host ""
 
 # Step 3: MCP Integration
@@ -158,6 +159,7 @@ Write-Host "╚═════════════════════�
 Write-Host ""
 Write-Host "  Language:           $LANGUAGE" -ForegroundColor Green
 Write-Host "  Project Name:       $PROJECT_NAME" -ForegroundColor Green
+Write-Host "  Target Directory:   $TARGET_DIR" -ForegroundColor Green
 Write-Host "  JIRA:               $ENABLE_JIRA" -ForegroundColor Green
 Write-Host "  Confluence:         $ENABLE_CONFLUENCE" -ForegroundColor Green
 Write-Host "  GitHub Copilot:     $ENABLE_COPILOT" -ForegroundColor Green
@@ -173,14 +175,28 @@ Write-Host ""
 Write-Host "→ Setting up project..." -ForegroundColor Green
 Write-Host ""
 
+# Resolve template paths before changing directory
+$ScriptRoot = $PSScriptRoot
+$RepoRoot = Resolve-Path (Join-Path $ScriptRoot "..")
+$TemplatesDir = Join-Path $RepoRoot "templates"
+$ConfigDir = Join-Path $RepoRoot "config"
+
+# Create and move to target directory
+if (-not (Test-Path $TARGET_DIR)) {
+    New-Item -ItemType Directory -Path $TARGET_DIR -Force | Out-Null
+    Write-Host "  ✓ Created target directory: $TARGET_DIR" -ForegroundColor Green
+}
+Set-Location $TARGET_DIR
+
 # Create language-specific configuration
 Write-Host "  → Creating language-specific files..." -ForegroundColor Blue
 
 switch ($LANGUAGE) {
     "javascript" {
         # Copy JavaScript template
-        if (Test-Path "templates/languages/javascript") {
-            Copy-Item -Path "templates/languages/javascript/*" -Destination "." -Recurse -Force
+        $JsTemplate = Join-Path $TemplatesDir "languages/javascript"
+        if (Test-Path $JsTemplate) {
+            Copy-Item -Path "$JsTemplate/*" -Destination "." -Recurse -Force
         }
         
         # Create package.json if it doesn't exist
@@ -236,8 +252,9 @@ switch ($LANGUAGE) {
     
     "python" {
         # Copy Python template
-        if (Test-Path "templates/languages/python") {
-            Copy-Item -Path "templates/languages/python/*" -Destination "." -Recurse -Force
+        $PyTemplate = Join-Path $TemplatesDir "languages/python"
+        if (Test-Path $PyTemplate) {
+            Copy-Item -Path "$PyTemplate/*" -Destination "." -Recurse -Force
         }
         
         # Create requirements.txt if it doesn't exist
@@ -344,8 +361,9 @@ end
 # Setup .env file
 Write-Host "  → Creating environment configuration..." -ForegroundColor Blue
 if (-not (Test-Path ".env")) {
-    if (Test-Path "config/.env.example") {
-        Copy-Item "config/.env.example" ".env"
+    $EnvExample = Join-Path $ConfigDir ".env.example"
+    if (Test-Path $EnvExample) {
+        Copy-Item $EnvExample ".env"
     }
     else {
         @"
