@@ -25,8 +25,8 @@ prompt_with_default() {
     local default=$2
     local var_name=$3
     
-    read -p "$(echo -e ${YELLOW}$prompt ${NC}[${GREEN}$default${NC}]): " input
-    eval $var_name="${input:-$default}"
+    read -p "$(echo -e "${YELLOW}${prompt} ${NC}[${GREEN}${default}${NC}]: ")" input
+    eval $var_name="\${input:-$default}"
 }
 
 # Function to select from options
@@ -35,8 +35,8 @@ select_option() {
     shift
     local options=("$@")
     
-    echo -e "${YELLOW}$prompt${NC}"
-    PS3="$(echo -e ${GREEN}Enter number: ${NC})"
+    echo -e "${YELLOW}$prompt${NC}" >&2
+    PS3="$(echo -e "${GREEN}Enter number: ${NC}")"
     select opt in "${options[@]}"; do
         if [[ -n $opt ]]; then
             echo "$opt"
@@ -145,7 +145,7 @@ echo -e "  JIRA:               ${GREEN}${ENABLE_JIRA:-n}${NC}"
 echo -e "  Confluence:         ${GREEN}${ENABLE_CONFLUENCE:-n}${NC}"
 echo -e "  GitHub Copilot:     ${GREEN}${ENABLE_COPILOT:-y}${NC}"
 echo ""
-read -p "$(echo -e ${YELLOW}Proceed with setup? ${NC}(y/n) [y]: )" PROCEED
+read -p "$(echo -e "${YELLOW}Proceed with setup? ${NC}(y/n) [y]: ")" PROCEED
 
 if [ "${PROCEED:-y}" != "y" ]; then
     echo -e "${RED}Setup cancelled.${NC}"
@@ -346,8 +346,9 @@ CLAUDE_MODEL=claude-3-5-sonnet-20241022
 MAX_TOKENS=4096
 TEMPERATURE=1.0
 EOF
+    fi
+    echo -e "    ${GREEN}✓${NC} Created .env file"
 fi
-echo -e "    ${GREEN}✓${NC} Created .env file"
 
 # Setup MCP if enabled
 if [ "${ENABLE_JIRA}" = "y" ] || [ "${ENABLE_CONFLUENCE}" = "y" ]; then
