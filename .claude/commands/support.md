@@ -15,21 +15,21 @@ The Support Engineer focuses on:
 ## Usage
 
 ```
-@work_on_ticket_support_engineer <ticket-id>
+@support <ticket-id>
 ```
 
 Examples:
 ```
-@work_on_ticket_support_engineer SUP-456
-@work_on_ticket_support_engineer "Customer can't login"
-@work_on_ticket_support_engineer --urgent
+@support SUP-456
+@support "Customer can't login"
+@support --urgent
 ```
 
 ## Workflow
 
 ### 1. Issue Intake
 ```
-@work_on_ticket_support_engineer SUP-456
+@support SUP-456
 
 Loading ticket SUP-456...
 
@@ -327,7 +327,7 @@ Response:
 
 ### Log Analysis
 ```
-@work_on_ticket_support_engineer SUP-456 --logs
+@support SUP-456 --logs
 
 Analyzing logs...
 
@@ -543,7 +543,7 @@ Track support metrics:
 
 ## See Also
 
-- `@work_on_ticket_engineer` - Development workflow
+- `@engineer` - Development workflow
 - `@reflection` - System analysis
 - `specs/code-standards.md` - Quality standards
 - Knowledge base documentation

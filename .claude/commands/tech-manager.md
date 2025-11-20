@@ -15,14 +15,14 @@ The Technical Manager role helps with:
 ## Usage
 
 ```
-@technicalManager
+@tech-manager
 ```
 
 With specific task:
 ```
-@technicalManager --plan-sprint
-@technicalManager --review-architecture
-@technicalManager --assess-risks
+@tech-manager --plan-sprint
+@tech-manager --review-architecture
+@tech-manager --assess-risks
 ```
 
 ## Responsibilities
@@ -59,7 +59,7 @@ With specific task:
 
 ### Epic Breakdown
 ```
-@technicalManager --breakdown-epic "User Authentication System"
+@tech-manager --breakdown-epic "User Authentication System"
 
 Output:
 Epic: User Authentication System
@@ -96,7 +96,7 @@ Risks: OAuth rate limits, Email deliverability
 
 ### Sprint Planning
 ```
-@technicalManager --plan-sprint
+@tech-manager --plan-sprint
 
 Sprint Capacity: 10 developer-days
 Team: 2 developers
@@ -126,7 +126,7 @@ Success Metrics:
 
 ### Architecture Review
 ```
-@technicalManager --review-architecture
+@tech-manager --review-architecture
 
 Current Architecture Assessment:
 
@@ -151,7 +151,7 @@ Recommendations:
 
 ### Technology Choices
 ```
-@technicalManager --evaluate "React vs Vue for new dashboard"
+@tech-manager --evaluate "React vs Vue for new dashboard"
 
 Evaluation Criteria:
 - Team expertise
@@ -181,7 +181,7 @@ Rationale: Team expertise is most critical factor. Faster delivery and better lo
 
 ### Design Patterns
 ```
-@technicalManager --recommend-pattern "State management for complex form"
+@tech-manager --recommend-pattern "State management for complex form"
 
 Context: Multi-step form with validation and API integration
 
@@ -206,7 +206,7 @@ Reason for rejection: Overkill for single-form state
 ## Risk Assessment
 
 ```
-@technicalManager --assess-risks
+@tech-manager --assess-risks
 
 Project Risk Assessment:
 
@@ -240,7 +240,7 @@ Risk Score: 32/100 (Acceptable)
 
 ### Task Assignment
 ```
-@technicalManager --assign-tasks
+@tech-manager --assign-tasks
 
 Available Developers:
 - Alice (Senior, Backend, Available: 8h/day)
@@ -269,7 +269,7 @@ Medium Priority:
 
 ### Code Review Coordination
 ```
-@technicalManager --coordinate-reviews
+@tech-manager --coordinate-reviews
 
 Pending PRs: 5
 
@@ -296,7 +296,7 @@ Recommended: Distribute across team, prioritize #123 and #125
 ## Progress Tracking
 
 ```
-@technicalManager --track-progress
+@tech-manager --track-progress
 
 Sprint Progress: Day 5 of 10
 
@@ -344,7 +344,7 @@ In `.claude/settings.json`:
 
 ### Weekly Status
 ```
-@technicalManager --weekly-report
+@tech-manager --weekly-report
 
 Week of Nov 13-17, 2025
 
@@ -371,7 +371,7 @@ Timeline: 2 days behind, recoverable
 
 ### Sprint Retrospective
 ```
-@technicalManager --retrospective
+@tech-manager --retrospective
 
 Sprint Retrospective
 
@@ -427,7 +427,7 @@ Continuous Improvement Score: 8/10
 
 ## See Also
 
-- `@technicalManagerReorganization` - Large-scale reorganization
+- `@tech-managerReorganization` - Large-scale reorganization
 - `@reflection` - Project health assessment
 - `specs/project-management.md` - Management guidelines
 - `specs/project_plan.md` - Project plan

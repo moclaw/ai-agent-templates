@@ -9,12 +9,12 @@ Streamline the PR merge process by automatically merging all PRs that have been 
 ## Usage
 
 ```
-@merge_all_approved_pull_requests
+@auto-merge-prs
 ```
 
 With options:
 ```
-@merge_all_approved_pull_requests --branch main --squash
+@auto-merge-prs --branch main --squash
 ```
 
 ## Prerequisites
@@ -88,22 +88,22 @@ Rebases and fast-forwards
 
 ### By Branch
 ```
-@merge_all_approved_pull_requests --branch develop
+@auto-merge-prs --branch develop
 ```
 
 ### By Author
 ```
-@merge_all_approved_pull_requests --author dependabot
+@auto-merge-prs --author dependabot
 ```
 
 ### By Label
 ```
-@merge_all_approved_pull_requests --label ready-to-merge
+@auto-merge-prs --label ready-to-merge
 ```
 
 ### Dry Run
 ```
-@merge_all_approved_pull_requests --dry-run
+@auto-merge-prs --dry-run
 ```
 Shows what would be merged without actually merging
 

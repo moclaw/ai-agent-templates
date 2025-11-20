@@ -425,5 +425,5 @@ Compare with other branch:
 ## See Also
 
 - `@prime` - Load project context
-- `@technicalManager` - Project planning
+- `@tech-manager` - Project planning
 - `specs/project-management.md` - Project standards

@@ -22,11 +22,11 @@ GitHub (Code)             Team (Collaboration)
 
 **Process:**
 1. Product Owner creates epic in JIRA
-2. Run `@technicalManager --breakdown-epic EPIC-ID`
+2. Run `@tech-manager --breakdown-epic EPIC-ID`
 3. Claude analyzes epic and suggests story breakdown
 4. Team reviews and refines stories
 5. Claude estimates story points based on historical data
-6. Run `@technicalManager --plan-sprint`
+6. Run `@tech-manager --plan-sprint`
 7. Claude suggests optimal sprint composition
 8. Team finalizes sprint commitment
 
@@ -41,14 +41,14 @@ GitHub (Code)             Team (Collaboration)
 
 **Process:**
 1. Developer picks ticket from sprint
-2. Run `@work_on_ticket_engineer PROJ-123`
+2. Run `@engineer PROJ-123`
 3. Claude loads context from JIRA and Confluence
 4. Claude helps implement feature
 5. Claude creates tests
 6. Claude updates documentation
 7. Claude creates PR with JIRA link
-8. Code review with `@respond_to_all_code_reviews`
-9. Merge with `@merge_all_approved_pull_requests`
+8. Code review with `@respond-reviews`
+9. Merge with `@auto-merge-prs`
 
 **Automation:**
 - Context loading
@@ -61,7 +61,7 @@ GitHub (Code)             Team (Collaboration)
 
 **Process:**
 1. Bug reported in JIRA
-2. Run `@work_on_ticket_support_engineer BUG-456`
+2. Run `@support BUG-456`
 3. Claude investigates logs and code
 4. Claude suggests root cause
 5. Claude provides workaround
@@ -237,7 +237,7 @@ Loads relevant context:
 ### Autonomous Work
 
 ```
-@work_on_ticket_engineer PROJ-123
+@engineer PROJ-123
 ```
 
 Claude will:
@@ -253,7 +253,7 @@ Claude will:
 ### Code Review
 
 ```
-@respond_to_all_code_reviews
+@respond-reviews
 ```
 
 Claude analyzes feedback and:
@@ -400,4 +400,4 @@ See `.mcp.json` for:
 - `specs/project_plan.md` - Current project plan
 - `specs/code-standards.md` - Coding standards
 - `.claude/commands/` - Available AI commands
-- `ai_docs/jira-and-confluence-tool-use.md` - Integration guide
+- `ai_docs/jira-confluence.md` - Integration guide

@@ -75,7 +75,7 @@ Each language template includes:
 - **Workspace Settings**: VS Code/JetBrains configuration
 - **Best Practices**: When to use Copilot vs Claude
 
-See [ai_docs/github-copilot-integration.md](ai_docs/github-copilot-integration.md) for details.
+See [ai_docs/copilot.md](ai_docs/copilot.md) for details.
 
 ### 🔧 Configuration Management
 - Pre-configured templates for Claude API integration
@@ -119,33 +119,33 @@ See [ai_docs/github-copilot-integration.md](ai_docs/github-copilot-integration.m
 .
 ├── .claude/                    # Claude Code configuration
 │   ├── commands/              # Custom Claude commands (13 files)
-│   │   ├── claude_template_setup.md
+│   │   ├── setup.md
 │   │   ├── infinite.md
-│   │   ├── merge_all_approved_pull_requests.md
+│   │   ├── auto-merge-prs.md
 │   │   ├── prime.md
-│   │   ├── prompt_writer.md
+│   │   ├── prompts.md
 │   │   ├── reflection.md
-│   │   ├── respond_to_all_code_reviews.md
-│   │   ├── technicalManager.md
-│   │   ├── technicalManagerReorganization.md
-│   │   ├── work_on_ticket_engineer.md
-│   │   ├── work_on_ticket_parallel.md
-│   │   ├── work_on_ticket_respond_to_pr_comments.md
-│   │   └── work_on_ticket_support_engineer.md
+│   │   ├── respond-reviews.md
+│   │   ├── tech-manager.md
+│   │   ├── tech-reorg.md
+│   │   ├── engineer.md
+│   │   ├── parallel.md
+│   │   ├── pr-comments.md
+│   │   └── support.md
 │   ├── settings.json          # Global Claude settings
 │   └── settings.local.json    # Local Claude settings override
 ├── .github/                   # GitHub configuration
 │   └── copilot/               # GitHub Copilot instructions
 ├── ai_docs/                   # AI-related documentation
-│   ├── anthropic-tool-use.md  # Anthropic tool usage guide
-│   ├── github-copilot-integration.md  # Copilot integration guide
-│   ├── jira-and-confluence-tool-use.md # JIRA/Confluence MCP
+│   ├── tool-use.md            # Anthropic tool usage guide
+│   ├── copilot.md             # Copilot integration guide
+│   ├── jira-confluence.md     # JIRA/Confluence MCP
 │   ├── react-native.md       # React Native development
 │   └── supabase.md           # Supabase integration
 ├── scripts/                   # Utility scripts
-│   ├── cleanup-worktrees.sh   # Clean up git worktrees
-│   ├── setup-worktree.sh      # Create individual worktree
-│   ├── setup-worktree-batch.sh # Batch worktree creation
+│   ├── worktree-cleanup.sh    # Clean up git worktrees
+│   ├── worktree.sh            # Create individual worktree
+│   ├── worktree-batch.sh      # Batch worktree creation
 │   └── setup.sh              # Interactive setup wizard
 ├── specs/                     # Project specifications
 │   ├── code-standards.md      # Universal code standards
@@ -182,9 +182,9 @@ See [ai_docs/github-copilot-integration.md](ai_docs/github-copilot-integration.m
 - [Multi-Language](templates/languages/multi/README.md)
 
 ### Integration Guides
-- [Anthropic Tool Use](ai_docs/anthropic-tool-use.md)
-- [GitHub Copilot Integration](ai_docs/github-copilot-integration.md)
-- [JIRA & Confluence MCP](ai_docs/jira-and-confluence-tool-use.md)
+- [Anthropic Tool Use](ai_docs/tool-use.md)
+- [GitHub Copilot Integration](ai_docs/copilot.md)
+- [JIRA & Confluence MCP](ai_docs/jira-confluence.md)
 - [React Native](ai_docs/react-native.md)
 - [Supabase](ai_docs/supabase.md)
 
@@ -242,10 +242,10 @@ Configure Copilot in:
 
 In Claude Desktop/Code:
 ```
-@work_on_ticket_engineer PROJ-123
+@engineer PROJ-123
 @prime --focus backend
 @reflection --deep
-@technicalManager --plan-sprint
+@tech-manager --plan-sprint
 ```
 
 ### Using with GitHub Copilot
@@ -255,7 +255,7 @@ In Claude Desktop/Code:
 3. Use Copilot for code completion
 4. Use Claude for code review
 
-See [GitHub Copilot Integration Guide](ai_docs/github-copilot-integration.md) for details.
+See [GitHub Copilot Integration Guide](ai_docs/copilot.md) for details.
 
 ## 🤝 Contributing
 

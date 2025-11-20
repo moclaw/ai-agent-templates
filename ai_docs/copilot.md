@@ -119,7 +119,7 @@ Create `.vscode/settings.json`:
 
 Use Claude for high-level decisions:
 ```
-@technicalManager --review-architecture
+@tech-manager --review-architecture
 
 # Claude provides:
 # - Architecture analysis
@@ -145,7 +145,7 @@ function validateEmail(email) {
 
 Use Claude for code review:
 ```
-@respond_to_all_code_reviews
+@respond-reviews
 
 # Claude:
 # - Analyzes feedback
@@ -168,7 +168,7 @@ describe('validateEmail', () => {
 
 **Claude**: Test strategy
 ```
-@work_on_ticket_engineer PROJ-123
+@engineer PROJ-123
 
 # Claude creates comprehensive test plan
 ```
@@ -201,7 +201,7 @@ describe('validateEmail', () => {
 
 1. **Plan with Claude:**
    ```
-   @work_on_ticket_engineer PROJ-123
+   @engineer PROJ-123
    ```
    Claude creates implementation plan
 
@@ -410,7 +410,7 @@ const premiumUsers = users.filter(
 #!/bin/sh
 
 # Use Claude for review before commit
-@respond_to_all_code_reviews
+@respond-reviews
 ```
 
 ### CI/CD Integration
@@ -445,7 +445,7 @@ Track usage:
 ## See Also
 
 - `CLAUDE.md` - Claude-specific documentation
-- `ai_docs/anthropic-tool-use.md` - Claude tool use guide
+- `ai_docs/tool-use.md` - Claude tool use guide
 - `specs/code-standards.md` - Coding standards
 - `.claude/commands/` - Claude custom commands
 

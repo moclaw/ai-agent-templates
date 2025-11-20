@@ -15,14 +15,14 @@ Use this command when you need to:
 ## Usage
 
 ```
-@technicalManagerReorganization
+@tech-managerReorganization
 ```
 
 With specific focus:
 ```
-@technicalManagerReorganization --architecture
-@technicalManagerReorganization --codebase
-@technicalManagerReorganization --dependencies
+@tech-managerReorganization --architecture
+@tech-managerReorganization --codebase
+@tech-managerReorganization --dependencies
 ```
 
 ## Reorganization Types
@@ -54,7 +54,7 @@ With specific focus:
 ## Planning Phase
 
 ```
-@technicalManagerReorganization --plan
+@tech-managerReorganization --plan
 
 Reorganization Assessment:
 
@@ -139,7 +139,7 @@ Process:
 
 ### Strangler Fig Pattern
 ```
-@technicalManagerReorganization --strangler-fig
+@tech-managerReorganization --strangler-fig
 
 Strategy:
 1. Create new system alongside old
@@ -158,7 +158,7 @@ Timeline: 6-8 weeks
 
 ### Branch by Abstraction
 ```
-@technicalManagerReorganization --branch-abstraction
+@tech-managerReorganization --branch-abstraction
 
 Strategy:
 1. Create abstraction layer
@@ -177,7 +177,7 @@ Timeline: 4-6 weeks
 
 ### Feature Flags
 ```
-@technicalManagerReorganization --feature-flags
+@tech-managerReorganization --feature-flags
 
 Strategy:
 1. Deploy new code disabled
@@ -198,7 +198,7 @@ Timeline: 3-4 weeks
 
 ### Directory Structure
 ```
-@technicalManagerReorganization --restructure
+@tech-managerReorganization --restructure
 
 Old Structure:
 project/
@@ -265,7 +265,7 @@ Data Module:
 ## Dependency Updates
 
 ```
-@technicalManagerReorganization --update-dependencies
+@tech-managerReorganization --update-dependencies
 
 Current Dependencies Analysis:
 ⚠️ 5 major versions behind
@@ -330,7 +330,7 @@ Security Tests:
 ## Risk Management
 
 ```
-@technicalManagerReorganization --risks
+@tech-managerReorganization --risks
 
 Identified Risks:
 
@@ -415,7 +415,7 @@ After:
 ## Monitoring
 
 ```
-@technicalManagerReorganization --monitor
+@tech-managerReorganization --monitor
 
 Metrics to Track:
 
@@ -507,7 +507,7 @@ After Completion:
 
 ## See Also
 
-- `@technicalManager` - Regular project management
+- `@tech-manager` - Regular project management
 - `@reflection` - Project analysis
 - `specs/code-standards.md` - Coding standards
 - Architecture documentation in `ai_docs/`

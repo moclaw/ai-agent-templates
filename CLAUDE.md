@@ -31,7 +31,7 @@ At the start of each session:
 #### Starting New Feature
 
 ```
-@work_on_ticket_engineer PROJ-123
+@engineer PROJ-123
 
 # Claude will:
 # 1. Load ticket from JIRA
@@ -45,7 +45,7 @@ At the start of each session:
 #### Code Review
 
 ```
-@respond_to_all_code_reviews
+@respond-reviews
 
 # Claude will:
 # 1. Analyze feedback
@@ -57,7 +57,7 @@ At the start of each session:
 #### Bug Investigation
 
 ```
-@work_on_ticket_support_engineer BUG-456
+@support BUG-456
 
 # Claude will:
 # 1. Reproduce issue
@@ -71,19 +71,19 @@ At the start of each session:
 
 See `.claude/commands/` for all available commands:
 
-- `claude_template_setup.md` - Setup guide
+- `setup.md` - Setup guide
 - `infinite.md` - Autonomous operation mode
-- `merge_all_approved_pull_requests.md` - Auto-merge PRs
+- `auto-merge-prs.md` - Auto-merge PRs
 - `prime.md` - Context loading
-- `prompt_writer.md` - Prompt engineering help
+- `prompts.md` - Prompt engineering help
 - `reflection.md` - Project analysis
-- `respond_to_all_code_reviews.md` - Batch PR responses
-- `technicalManager.md` - Project management
-- `technicalManagerReorganization.md` - Large refactoring
-- `work_on_ticket_engineer.md` - Feature development
-- `work_on_ticket_parallel.md` - Parallel execution
-- `work_on_ticket_respond_to_pr_comments.md` - PR comments
-- `work_on_ticket_support_engineer.md` - Support issues
+- `respond-reviews.md` - Batch PR responses
+- `tech-manager.md` - Project management
+- `tech-reorg.md` - Large refactoring
+- `engineer.md` - Feature development
+- `parallel.md` - Parallel execution
+- `pr-comments.md` - PR comments
+- `support.md` - Support issues
 
 ## Configuration
 

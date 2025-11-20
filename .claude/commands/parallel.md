@@ -14,14 +14,14 @@ Execute multiple independent tasks simultaneously to:
 ## Usage
 
 ```
-@work_on_ticket_parallel <ticket-ids>
+@parallel <ticket-ids>
 ```
 
 Examples:
 ```
-@work_on_ticket_parallel PROJ-123 PROJ-124 PROJ-125
-@work_on_ticket_parallel --epic EPIC-10
-@work_on_ticket_parallel --sprint current
+@parallel PROJ-123 PROJ-124 PROJ-125
+@parallel --epic EPIC-10
+@parallel --sprint current
 ```
 
 ## When to Use
@@ -44,7 +44,7 @@ Examples:
 
 ### Task Analysis
 ```
-@work_on_ticket_parallel PROJ-123 PROJ-124 PROJ-125
+@parallel PROJ-123 PROJ-124 PROJ-125
 
 Analyzing tasks...
 
@@ -120,7 +120,7 @@ Overall: 80% complete
 
 ### Dependency Management
 ```
-@work_on_ticket_parallel --with-dependencies PROJ-123 PROJ-124 PROJ-126
+@parallel --with-dependencies PROJ-123 PROJ-124 PROJ-126
 
 Task Dependencies:
 
@@ -212,7 +212,7 @@ Alternative: Merge Queue
 
 ### Epic Completion
 ```
-@work_on_ticket_parallel --epic EPIC-10
+@parallel --epic EPIC-10
 
 EPIC-10: User Management System
 
@@ -246,7 +246,7 @@ ETA: 3 days
 
 ### Sprint Completion
 ```
-@work_on_ticket_parallel --sprint current
+@parallel --sprint current
 
 Current Sprint: Sprint 15
 
@@ -426,6 +426,6 @@ Track parallel execution:
 
 ## See Also
 
-- `@work_on_ticket_engineer` - Single ticket workflow
-- `@technicalManager` - Project planning
-- `@merge_all_approved_pull_requests` - Batch merging
+- `@engineer` - Single ticket workflow
+- `@tech-manager` - Project planning
+- `@auto-merge-prs` - Batch merging

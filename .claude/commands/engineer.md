@@ -14,21 +14,21 @@ The Engineer role focuses on:
 ## Usage
 
 ```
-@work_on_ticket_engineer <ticket-id>
+@engineer <ticket-id>
 ```
 
 Examples:
 ```
-@work_on_ticket_engineer PROJ-123
-@work_on_ticket_engineer "Add user profile page"
-@work_on_ticket_engineer --continue
+@engineer PROJ-123
+@engineer "Add user profile page"
+@engineer --continue
 ```
 
 ## Workflow
 
 ### 1. Ticket Analysis
 ```
-@work_on_ticket_engineer PROJ-123
+@engineer PROJ-123
 
 Loading ticket PROJ-123...
 
@@ -289,7 +289,7 @@ PR Quality:
 
 ### Implementing Feature
 ```
-@work_on_ticket_engineer PROJ-123
+@engineer PROJ-123
 
 Process:
 1. Understand requirements
@@ -305,7 +305,7 @@ Process:
 
 ### Fixing Bug
 ```
-@work_on_ticket_engineer BUG-456
+@engineer BUG-456
 
 Process:
 1. Reproduce bug
@@ -321,7 +321,7 @@ Process:
 
 ### Refactoring
 ```
-@work_on_ticket_engineer TECH-789
+@engineer TECH-789
 
 Process:
 1. Identify code smell
@@ -386,7 +386,7 @@ The code is at [link]. Any ideas?"
 
 ### Pair Programming
 ```
-@work_on_ticket_engineer PROJ-123 --pair @teammate
+@engineer PROJ-123 --pair @teammate
 
 Benefits:
 - Faster problem solving
@@ -432,7 +432,7 @@ Track your work:
 
 ## See Also
 
-- `@work_on_ticket_parallel` - Parallel task execution
-- `@work_on_ticket_respond_to_pr_comments` - PR comment workflow
-- `@work_on_ticket_support_engineer` - Support role workflow
+- `@parallel` - Parallel task execution
+- `@pr-comments` - PR comment workflow
+- `@support` - Support role workflow
 - `specs/code-standards.md` - Coding standards

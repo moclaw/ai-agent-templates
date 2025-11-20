@@ -277,5 +277,5 @@ Track priming effectiveness:
 ## See Also
 
 - `@reflection` - Analyze project structure
-- `@technicalManager` - Project planning
+- `@tech-manager` - Project planning
 - Prompt caching documentation

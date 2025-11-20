@@ -65,14 +65,14 @@ your-project/
 1. Review the project specifications in `specs/`
 2. Read through `ai_docs/` for integration guides
 3. Start development using Claude commands
-4. Use `@technicalManager` for project planning
-5. Use `@work_on_ticket_engineer` for implementation
+4. Use `@tech-manager` for project planning
+5. Use `@engineer` for implementation
 
 ## Custom Commands Usage
 
 In Claude Desktop/Code, you can reference commands with `@` syntax:
-- `@work_on_ticket_engineer` - Start working on a ticket
-- `@prompt_writer` - Get help writing prompts
+- `@engineer` - Start working on a ticket
+- `@prompts` - Get help writing prompts
 - `@reflection` - Analyze project structure
 
 ## Troubleshooting

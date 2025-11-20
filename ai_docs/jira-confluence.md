@@ -65,7 +65,7 @@ Create `.mcp.json` in project root:
 ### Query Tickets
 
 ```
-@work_on_ticket_engineer PROJ-123
+@engineer PROJ-123
 ```
 
 Claude will:
@@ -144,7 +144,7 @@ Search Confluence for database migration guides
 ### Sprint Planning
 
 ```
-@technicalManager --plan-sprint
+@tech-manager --plan-sprint
 
 # Claude will:
 # 1. Fetch backlog from JIRA
@@ -157,7 +157,7 @@ Search Confluence for database migration guides
 ### Ticket Workflow
 
 ```
-@work_on_ticket_engineer PROJ-123
+@engineer PROJ-123
 
 # Claude will:
 # 1. Load ticket from JIRA

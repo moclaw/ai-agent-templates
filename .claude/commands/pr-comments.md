@@ -14,21 +14,21 @@ Handle PR comments by:
 ## Usage
 
 ```
-@work_on_ticket_respond_to_pr_comments <pr-number>
+@pr-comments <pr-number>
 ```
 
 Examples:
 ```
-@work_on_ticket_respond_to_pr_comments 456
-@work_on_ticket_respond_to_pr_comments --current
-@work_on_ticket_respond_to_pr_comments 456 --reviewer @alice
+@pr-comments 456
+@pr-comments --current
+@pr-comments 456 --reviewer @alice
 ```
 
 ## Workflow
 
 ### 1. Comment Analysis
 ```
-@work_on_ticket_respond_to_pr_comments 456
+@pr-comments 456
 
 PR #456: Add user profile page
 Branch: feature/PROJ-123
@@ -471,6 +471,6 @@ approach? Happy to implement either way."
 
 ## See Also
 
-- `@respond_to_all_code_reviews` - Batch PR responses
-- `@work_on_ticket_engineer` - Engineer workflow
+- `@respond-reviews` - Batch PR responses
+- `@engineer` - Engineer workflow
 - Code review guidelines in `specs/code-standards.md`

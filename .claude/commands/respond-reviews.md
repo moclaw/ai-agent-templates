@@ -14,14 +14,14 @@ Efficiently address code review feedback by:
 ## Usage
 
 ```
-@respond_to_all_code_reviews
+@respond-reviews
 ```
 
 With filters:
 ```
-@respond_to_all_code_reviews --pr 123
-@respond_to_all_code_reviews --reviewer @username
-@respond_to_all_code_reviews --priority high
+@respond-reviews --pr 123
+@respond-reviews --reviewer @username
+@respond-reviews --priority high
 ```
 
 ## Process
@@ -114,12 +114,12 @@ In `.claude/settings.json`:
 
 Handle multiple PRs:
 ```
-@respond_to_all_code_reviews --all
+@respond-reviews --all
 ```
 
 Process by priority:
 ```
-@respond_to_all_code_reviews --priority high --first
+@respond-reviews --priority high --first
 ```
 
 ## Response Templates
@@ -174,7 +174,7 @@ Let's address in a follow-up PR to keep this focused.
 ## Workflow
 
 ```
-@respond_to_all_code_reviews
+@respond-reviews
 
 Output:
 📋 Found 8 review comments across 3 PRs
@@ -254,25 +254,25 @@ Track review response:
 
 ### Dry Run
 ```
-@respond_to_all_code_reviews --dry-run
+@respond-reviews --dry-run
 ```
 Preview responses without posting
 
 ### Focus Mode
 ```
-@respond_to_all_code_reviews --focus-pr 123
+@respond-reviews --focus-pr 123
 ```
 Handle specific PR only
 
 ### Reviewer Filter
 ```
-@respond_to_all_code_reviews --reviewer @alice
+@respond-reviews --reviewer @alice
 ```
 Address specific reviewer's comments
 
 ### Time-Based
 ```
-@respond_to_all_code_reviews --since 24h
+@respond-reviews --since 24h
 ```
 Handle recent comments only
 
@@ -313,6 +313,6 @@ Before marking resolved:
 
 ## See Also
 
-- `@work_on_ticket_respond_to_pr_comments` - Detailed PR comment workflow
-- `@merge_all_approved_pull_requests` - Auto-merge approved PRs
+- `@pr-comments` - Detailed PR comment workflow
+- `@auto-merge-prs` - Auto-merge approved PRs
 - Code review guidelines in `specs/code-standards.md`

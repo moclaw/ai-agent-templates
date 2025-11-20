@@ -14,15 +14,15 @@ The Prompt Writer assists in crafting high-quality prompts by:
 ## Usage
 
 ```
-@prompt_writer <your-task-description>
+@prompts <your-task-description>
 ```
 
 ### Examples
 
 ```
-@prompt_writer Help me write a prompt for code review
-@prompt_writer Improve this prompt: [paste your prompt]
-@prompt_writer Create a system prompt for a customer service bot
+@prompts Help me write a prompt for code review
+@prompts Improve this prompt: [paste your prompt]
+@prompts Create a system prompt for a customer service bot
 ```
 
 ## Prompt Engineering Principles
@@ -217,14 +217,14 @@ Generate [output] following these exact constraints:
 
 ### A/B Testing
 ```
-@prompt_writer --test
+@prompts --test
 Prompt A: [version 1]
 Prompt B: [version 2]
 ```
 
 ### Iteration
 ```
-@prompt_writer --iterate
+@prompts --iterate
 Original: [prompt]
 Feedback: [what didn't work]
 Goal: [desired improvement]
@@ -232,7 +232,7 @@ Goal: [desired improvement]
 
 ### Validation
 ```
-@prompt_writer --validate
+@prompts --validate
 Prompt: [your prompt]
 Test Cases: [expected behaviors]
 ```
@@ -320,27 +320,27 @@ Use React hooks following the patterns in our codebase:
 
 Access pre-built prompts:
 ```
-@prompt_writer --library code-review
-@prompt_writer --library documentation
-@prompt_writer --library testing
-@prompt_writer --library refactoring
+@prompts --library code-review
+@prompts --library documentation
+@prompts --library testing
+@prompts --library refactoring
 ```
 
 ## Integration
 
 ### Save Prompts
 ```
-@prompt_writer --save my-prompt-name
+@prompts --save my-prompt-name
 ```
 
 ### Load Prompts
 ```
-@prompt_writer --load my-prompt-name
+@prompts --load my-prompt-name
 ```
 
 ### Share Prompts
 ```
-@prompt_writer --export my-prompt-name.md
+@prompts --export my-prompt-name.md
 ```
 
 ## Best Practices
