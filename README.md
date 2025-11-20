@@ -12,8 +12,14 @@ This repository serves as a professional template for teams and developers build
 
 Run the interactive setup script to configure your project:
 
+**Linux/macOS:**
 ```bash
 ./scripts/setup.sh
+```
+
+**Windows (PowerShell):**
+```powershell
+.\scripts\setup.ps1
 ```
 
 The setup wizard will:
@@ -146,7 +152,8 @@ See [ai_docs/copilot.md](ai_docs/copilot.md) for details.
 │   ├── worktree-cleanup.sh    # Clean up git worktrees
 │   ├── worktree.sh            # Create individual worktree
 │   ├── worktree-batch.sh      # Batch worktree creation
-│   └── setup.sh              # Interactive setup wizard
+│   ├── setup.sh              # Interactive setup wizard (Linux/macOS)
+│   └── setup.ps1             # Interactive setup wizard (Windows)
 ├── specs/                     # Project specifications
 │   ├── code-standards.md      # Universal code standards
 │   ├── project-management.md  # AI-assisted project management
@@ -203,7 +210,7 @@ TEMPERATURE=1.0
 
 ### Language Selection
 
-The interactive setup script (`scripts/setup.sh`) will:
+The interactive setup script (`scripts/setup.sh` or `scripts/setup.ps1` on Windows) will:
 1. Detect your current language (if applicable)
 2. Ask for language preference
 3. Generate language-specific configuration
@@ -227,9 +234,22 @@ Configure Copilot in:
 
 ### Starting a New Project
 
+**Linux/macOS:**
 ```bash
 # Run interactive setup
 ./scripts/setup.sh
+
+# Follow prompts to:
+# - Select language
+# - Configure integrations
+# - Set up GitHub Copilot
+# - Create example project
+```
+
+**Windows (PowerShell):**
+```powershell
+# Run interactive setup
+.\scripts\setup.ps1
 
 # Follow prompts to:
 # - Select language
