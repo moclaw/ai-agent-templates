@@ -10,20 +10,23 @@ This repository serves as a professional template for teams and developers build
 
 ### Interactive Setup
 
-Run the interactive setup script to configure your project:
+Run the interactive setup script to configure your project. You can optionally specify a target directory.
 
 **Linux/macOS:**
 ```bash
-./scripts/setup.sh
+./scripts/setup.sh [target-directory]
+# Example: ./scripts/setup.sh ./my-new-project
 ```
 
 **Windows (PowerShell):**
 ```powershell
-.\scripts\setup.ps1
+.\scripts\setup.ps1 [TargetDirectory]
+# Example: .\scripts\setup.ps1 .\my-new-project
 ```
 
 The setup wizard will:
 - Detect or ask for your preferred programming language
+- Confirm the target directory (defaults to current dir or the one provided)
 - Configure language-specific settings
 - Allow you to specify a target directory for the project (defaults to current directory)
 - Set up MCP integration (JIRA, Confluence)
@@ -152,9 +155,12 @@ See [ai_docs/copilot.md](ai_docs/copilot.md) for details.
 │   ├── react-native.md       # React Native development
 │   └── supabase.md           # Supabase integration
 ├── scripts/                   # Utility scripts
-│   ├── worktree-cleanup.sh    # Clean up git worktrees
-│   ├── worktree.sh            # Create individual worktree
-│   ├── worktree-batch.sh      # Batch worktree creation
+│   ├── worktree-cleanup.sh    # Clean up git worktrees (Bash)
+│   ├── worktree-cleanup.ps1   # Clean up git worktrees (PowerShell)
+│   ├── worktree.sh            # Create individual worktree (Bash)
+│   ├── worktree.ps1           # Create individual worktree (PowerShell)
+│   ├── worktree-batch.sh      # Batch worktree creation (Bash)
+│   ├── worktree-batch.ps1     # Batch worktree creation (PowerShell)
 │   ├── setup.sh              # Interactive setup wizard (Linux/macOS)
 │   └── setup.ps1             # Interactive setup wizard (Windows)
 ├── specs/                     # Project specifications
@@ -244,6 +250,7 @@ Configure Copilot in:
 
 # Follow prompts to:
 # - Select language
+# - Choose target directory
 # - Configure integrations
 # - Set up GitHub Copilot
 # - Create example project
@@ -256,6 +263,7 @@ Configure Copilot in:
 
 # Follow prompts to:
 # - Select language
+# - Choose target directory
 # - Configure integrations
 # - Set up GitHub Copilot
 # - Create example project
@@ -279,6 +287,34 @@ In Claude Desktop/Code:
 4. Use Claude for code review
 
 See [GitHub Copilot Integration Guide](ai_docs/copilot.md) for details.
+
+### Worktree Management
+
+Efficiently manage multiple branches using git worktrees:
+
+**Linux/macOS:**
+```bash
+# Create a new worktree
+./scripts/worktree.sh feature/new-auth
+
+# Create multiple worktrees
+./scripts/worktree-batch.sh feature/auth feature/dashboard
+
+# Clean up merged/deleted worktrees
+./scripts/worktree-cleanup.sh
+```
+
+**Windows (PowerShell):**
+```powershell
+# Create a new worktree
+.\scripts\worktree.ps1 feature/new-auth
+
+# Create multiple worktrees
+.\scripts\worktree-batch.ps1 feature/auth feature/dashboard
+
+# Clean up merged/deleted worktrees
+.\scripts\worktree-cleanup.ps1
+```
 
 ## 🤝 Contributing
 

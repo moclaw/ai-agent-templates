@@ -1,6 +1,10 @@
 # Interactive Setup Script for AI Agent Templates (PowerShell)
 # This script helps you configure the template for your preferred language and tools
 
+param(
+    [string]$TargetDirectory
+)
+
 # Stop on errors
 $ErrorActionPreference = "Stop"
 
@@ -126,7 +130,8 @@ Write-Host "→ Step 2: Project Configuration" -ForegroundColor Green
 Write-Host ""
 $PROJECT_NAME = Get-InputWithDefault "  Project name" "my-ai-project"
 $PROJECT_DESC = Get-InputWithDefault "  Project description" "AI-powered application"
-$TARGET_DIR = Get-InputWithDefault "  Target directory" "."
+$defaultDir = if ([string]::IsNullOrWhiteSpace($TargetDirectory)) { "." } else { $TargetDirectory }
+$TARGET_DIR = Get-InputWithDefault "  Target directory" $defaultDir
 Write-Host ""
 
 # Step 3: MCP Integration
@@ -604,6 +609,7 @@ Write-Host "Documentation:" -ForegroundColor Cyan
 Write-Host "  - Getting Started: docs/getting-started.md" -ForegroundColor White
 Write-Host "  - Best Practices: docs/best-practices.md" -ForegroundColor White
 Write-Host "  - API Reference: ai_docs/tool-use.md" -ForegroundColor White
+Write-Host "  - Worktree Management: scripts/worktree*.ps1" -ForegroundColor White
 Write-Host ""
 Write-Host "Happy coding with Claude AI! 🚀" -ForegroundColor Yellow
 Write-Host ""

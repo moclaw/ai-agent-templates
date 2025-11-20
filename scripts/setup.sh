@@ -107,7 +107,8 @@ echo -e "${GREEN}→${NC} Step 2: Project Configuration"
 echo ""
 prompt_with_default "  Project name" "my-ai-project" PROJECT_NAME
 prompt_with_default "  Project description" "AI-powered application" PROJECT_DESC
-prompt_with_default "  Target directory" "." TARGET_DIR
+DEFAULT_DIR="${1:-.}"
+prompt_with_default "  Target directory" "$DEFAULT_DIR" TARGET_DIR
 echo ""
 
 # Step 3: MCP Integration
@@ -564,7 +565,8 @@ echo ""
 echo -e "${BLUE}Documentation:${NC}"
 echo -e "  - Getting Started: ${GREEN}docs/getting-started.md${NC}"
 echo -e "  - Best Practices: ${GREEN}docs/best-practices.md${NC}"
-echo -e "  - API Reference: ${GREEN}ai_docs/anthropic-tool-use.md${NC}"
+echo -e "  - API Reference: ${GREEN}ai_docs/tool-use.md${NC}"
+echo -e "  - Worktree Management: ${GREEN}scripts/worktree*.sh${NC}"
 echo ""
 echo -e "${YELLOW}Happy coding with Claude AI! 🚀${NC}"
 echo ""
