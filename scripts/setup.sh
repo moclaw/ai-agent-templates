@@ -107,6 +107,7 @@ echo -e "${GREEN}→${NC} Step 2: Project Configuration"
 echo ""
 prompt_with_default "  Project name" "my-ai-project" PROJECT_NAME
 prompt_with_default "  Project description" "AI-powered application" PROJECT_DESC
+prompt_with_default "  Target directory" "." TARGET_DIR
 echo ""
 
 # Step 3: MCP Integration
@@ -139,6 +140,7 @@ echo -e "${BLUE}╚════════════════════�
 echo ""
 echo -e "  Language:           ${GREEN}$LANGUAGE${NC}"
 echo -e "  Project Name:       ${GREEN}$PROJECT_NAME${NC}"
+echo -e "  Target Directory:   ${GREEN}$TARGET_DIR${NC}"
 echo -e "  JIRA:               ${GREEN}${ENABLE_JIRA:-n}${NC}"
 echo -e "  Confluence:         ${GREEN}${ENABLE_CONFLUENCE:-n}${NC}"
 echo -e "  GitHub Copilot:     ${GREEN}${ENABLE_COPILOT:-y}${NC}"
@@ -154,14 +156,27 @@ echo ""
 echo -e "${GREEN}→${NC} Setting up project..."
 echo ""
 
+# Resolve paths
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
+TEMPLATES_DIR="$REPO_ROOT/templates"
+CONFIG_DIR="$REPO_ROOT/config"
+
+# Create and move to target directory
+if [ ! -d "$TARGET_DIR" ]; then
+    mkdir -p "$TARGET_DIR"
+    echo -e "  ${GREEN}✓${NC} Created target directory: $TARGET_DIR"
+fi
+cd "$TARGET_DIR"
+
 # Create language-specific configuration
 echo -e "  ${BLUE}→${NC} Creating language-specific files..."
 
 case "$LANGUAGE" in
     "javascript")
         # Copy JavaScript template
-        if [ -d "templates/languages/javascript" ]; then
-            cp -r templates/languages/javascript/* .
+        if [ -d "$TEMPLATES_DIR/languages/javascript" ]; then
+            cp -r "$TEMPLATES_DIR/languages/javascript/"* .
         fi
         
         # Create package.json if it doesn't exist
@@ -216,8 +231,8 @@ EOF
         
     "python")
         # Copy Python template
-        if [ -d "templates/languages/python" ]; then
-            cp -r templates/languages/python/* .
+        if [ -d "$TEMPLATES_DIR/languages/python" ]; then
+            cp -r "$TEMPLATES_DIR/languages/python/"* .
         fi
         
         # Create requirements.txt if it doesn't exist
@@ -321,7 +336,10 @@ esac
 # Setup .env file
 echo -e "  ${BLUE}→${NC} Creating environment configuration..."
 if [ ! -f ".env" ]; then
-    cp config/.env.example .env 2>/dev/null || cat > .env <<EOF
+    if [ -f "$CONFIG_DIR/.env.example" ]; then
+        cp "$CONFIG_DIR/.env.example" .env
+    else
+        cat > .env <<EOF
 # Anthropic API Configuration
 ANTHROPIC_API_KEY=your_api_key_here
 CLAUDE_MODEL=claude-3-5-sonnet-20241022
