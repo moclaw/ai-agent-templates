@@ -14,12 +14,12 @@ Run the interactive setup script to configure your project:
 
 **Linux/macOS:**
 ```bash
-./scripts/setup.sh
+./scripts/setup.sh [target folder]
 ```
 
 **Windows (PowerShell):**
 ```powershell
-.\scripts\setup.ps1
+.\scripts\setup.ps1 [target folder]
 ```
 
 The setup wizard will:
